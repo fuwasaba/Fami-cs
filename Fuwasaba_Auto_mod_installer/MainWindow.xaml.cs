@@ -12,6 +12,10 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Security.Principal;
 using Microsoft.Win32;
+using System.Net;
+using System.Net.Http;
+using System.Linq;
+using System.Collections.Generic;
 
 
 namespace Fuwasaba_Auto_mod_installer
@@ -43,8 +47,19 @@ namespace Fuwasaba_Auto_mod_installer
                 if (dialog.ShowDialog() == true)
                 {
                     folderName = dialog.FolderName;
-                    MessageBox.Show(folderName);
+                }
 
+                string remoteUri = "https://www.dropbox.com/scl/fi/094iy3s80b0ithw7xwmws/mods.zip?rlkey=ebiajl98y91db8biwwgj72jj9&st=ikvyt4sq&dl=1";
+                string fileName = "mods.zip";
+                string dest = @$"{folderName}\{fileName}";
+
+                using (WebClient webClient = new WebClient())
+                {
+                    MessageBox.Show("ダウンロードしています。");
+
+                    webClient.DownloadFile(remoteUri + fileName, dest);
+
+                    MessageBox.Show("ダウンロードしました。");
                 }
 
             }
