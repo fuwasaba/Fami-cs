@@ -1,0 +1,1 @@
+# Fuwasaba_Auto_mod_installer
