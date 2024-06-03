@@ -4,6 +4,8 @@ using System.Net.Http;
 using Microsoft.Win32;
 using System.IO.Compression;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+
 
 namespace Fuwasaba_Auto_mod_installer
 {
@@ -80,7 +82,10 @@ namespace Fuwasaba_Auto_mod_installer
 
                 await File.WriteAllTextAsync(launcherPath, launcherProfiles.ToString());
 
-                MessageBox.Show("構成を作成しました。");
+                MessageBox.Show("構成を作成しました。\nふわ鯖を楽しんでください！");
+                
+                System.Diagnostics.Process.Start(@"C:\XboxGames\Minecraft Launcher\Content\Minecraft.exe");
+
                 this.Close();
             }
             else
@@ -155,6 +160,9 @@ namespace Fuwasaba_Auto_mod_installer
                 await File.WriteAllTextAsync(launcherPath, launcherProfiles.ToString());
 
                 MessageBox.Show("構成を作成しました。");
+
+                System.Diagnostics.Process.Start(@"C:\XboxGames\Minecraft Launcher\Content\Minecraft.exe");
+
                 this.Close();
             }
             else
