@@ -1,4 +1,4 @@
-# Fuwasaba_Auto_Mod_Installer
+# Fuwasaba Auto Mod Installer
 ふわ鯖MOD自動導入ツール
 
 coded by Quantum8060
