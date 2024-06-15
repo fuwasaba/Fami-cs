@@ -11,18 +11,42 @@
     <Grid>
         <Button Content="構成作成！"
                 RenderTransformOrigin="-0.15,-1.446"
-                Margin="60,94,60,85"
+                Margin="60,117,60,62"
                 Click="Button_Click" />
         <Frame Content="Frame"
-               HorizontalAlignment="Left"
+               HorizontalAlignment="Center"
                Height="3"
-               Margin="170,126,0,0"
+               Margin="0,122,0,0"
                VerticalAlignment="Top"
                Width="30" />
-        <Button Content="軽量化構成を作成！"
-                RenderTransformOrigin="-0.15,-1.446"
-                Margin="60,161,60,18"
-                Click="Button_Click_1" />
+        <Slider x:Name="ramSlider"
+                TickPlacement="TopLeft"
+                HorizontalAlignment="Center"
+                Margin="0,69,0,0"
+                VerticalAlignment="Top"
+                Width="280"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                SmallChange="1"
+                Minimum="4"
+                Maximum="12"
+                ValueChanged="ramSlider_ValueChanged" />
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="60,48,0,0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Top"
+                   Width="75"><Run Language="ja-jp"
+                                   Text="メモリ割り当て" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="45,77,0,0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Top"><Run Language="ja-jp"
+                                                Text="4" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="340,77,0,0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Top"><Run Language="ja-jp"
+                                                Text="12" /></TextBlock>
 
     </Grid>
 </Window>
