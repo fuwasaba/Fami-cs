@@ -37,13 +37,19 @@ namespace Fuwasaba_Auto_mod_installer
                     folderName = dialog.FolderName;
                 }
 
-                string remoteUri = "https://cdn.discordapp.com/attachments/898221879553306654/1246856551562612746/mods.zip?ex=665de927&is=665c97a7&hm=a13f48ae27e57fabc3b0e5bc60961643c8a6c9f5e53a0f12a982d85ade7a40bb&";
-                string fileName = "fuwasaba.zip";
-                string dest = @$"{folderName}\{fileName}";
+                string Famifolder = Directory.GetCurrentDirectory();
+
+                var app = new ProcessStartInfo();
+
+                app.FileName = @$"{Famifolder}\download.exe";
+
+                Process.Start(app);
 
                 MessageBox.Show("構成を作成しています。");
 
-                await DownloadFileAsync(remoteUri + fileName, dest);
+                System.Threading.Thread.Sleep(10000);
+
+                File.Move(@$"{Famifolder}\fuwasaba.zip", @$"{folderName}\fuwasaba.zip");
 
                 string zipPath = @$"{folderName}\fuwasaba.zip";
                 string extractPath = @$"{folderName}";
@@ -83,7 +89,7 @@ namespace Fuwasaba_Auto_mod_installer
                 await File.WriteAllTextAsync(launcherPath, launcherProfiles.ToString());
 
                 MessageBox.Show("構成を作成しました。\nふわ鯖を楽しんでください！");
-                
+
                 System.Diagnostics.Process.Start(@"C:\XboxGames\Minecraft Launcher\Content\Minecraft.exe");
 
                 this.Close();
@@ -114,13 +120,13 @@ namespace Fuwasaba_Auto_mod_installer
                     folderName = dialog.FolderName;
                 }
 
-                string remoteUri = "https://cdn.discordapp.com/attachments/898221879553306654/1246856551562612746/mods.zip?ex=665de927&is=665c97a7&hm=a13f48ae27e57fabc3b0e5bc60961643c8a6c9f5e53a0f12a982d85ade7a40bb&";
-                string fileName = "fuwasaba.zip";
-                string dest = @$"{folderName}\{fileName}";
+                var app = new ProcessStartInfo();
+
+                app.FileName = "download.exe";
+
+                Process.Start(app);
 
                 MessageBox.Show("構成を作成しています。");
-
-                await DownloadFileAsync(remoteUri + fileName, dest);
 
                 string zipPath = @$"{folderName}\fuwasaba.zip";
                 string extractPath = @$"{folderName}";
@@ -169,18 +175,6 @@ namespace Fuwasaba_Auto_mod_installer
             {
                 System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.32/forge-1.20.1-47.2.32-installer.jar");
                 MessageBox.Show("1.20.1 Forge 47.2.32が存在しません!\nダウンロードしてください。");
-            }
-        }
-
-        private async Task DownloadFileAsync(string url, string destinationPath)
-        {
-            using (var response = await client.GetAsync(url))
-            {
-                response.EnsureSuccessStatusCode();
-                await using (var fs = new FileStream(destinationPath, FileMode.CreateNew))
-                {
-                    await response.Content.CopyToAsync(fs);
-                }
             }
         }
     }

@@ -11,7 +11,7 @@
     <Grid>
         <Button Content="構成作成！"
                 RenderTransformOrigin="-0.15,-1.446"
-                Margin="60,85,60,94"
+                Margin="60,94,60,85"
                 Click="Button_Click" />
         <Frame Content="Frame"
                HorizontalAlignment="Left"
@@ -21,7 +21,7 @@
                Width="30" />
         <Button Content="軽量化構成を作成！"
                 RenderTransformOrigin="-0.15,-1.446"
-                Margin="60,156,60,23"
+                Margin="60,161,60,18"
                 Click="Button_Click_1" />
 
     </Grid>
