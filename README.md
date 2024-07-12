@@ -17,3 +17,6 @@ coded by Quantum8060
 
 ## ふわ鯖への参加はこちら
 [![](https://dcbadge.vercel.app/api/server/4fM57VaQTQ)](https://discord.gg/4fM57VaQTQ)
+
+## 追記
+C#の勉強がてら作ったのでコードがきったないです
