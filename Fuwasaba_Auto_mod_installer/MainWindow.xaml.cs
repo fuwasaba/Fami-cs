@@ -20,7 +20,7 @@ namespace Fuwasaba_Auto_mod_installer
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            string filePath = @$"C:\Users\{Environment.UserName}\AppData\Roaming\.minecraft\versions\1.20.1-forge-47.2.32";
+            string filePath = @$"C:\Users\{Environment.UserName}\AppData\Roaming\.minecraft\versions\1.18.2-forge-40.2.21";
 
             if (Directory.Exists(filePath))
             {
@@ -75,8 +75,8 @@ namespace Fuwasaba_Auto_mod_installer
 
                 JObject newProfile = new JObject
                 {
-                    ["name"] = "ふわ鯖1.5期専用",
-                    ["lastVersionId"] = "1.20.1-forge-47.2.32",
+                    ["name"] = "ふわ鯖2期専用",
+                    ["lastVersionId"] = "1.18.2-forge-40.2.21",
                     ["created"] = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
                     ["lastUsed"] = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
                     ["type"] = "custom",
@@ -98,8 +98,8 @@ namespace Fuwasaba_Auto_mod_installer
             }
             else
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.32/forge-1.20.1-47.2.32-installer.jar");
-                MessageBox.Show("1.20.1 Forge 47.2.32が存在しません!\nダウンロードしてください。");
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.2.21/forge-1.18.2-40.2.21-installer.jar");
+                MessageBox.Show("1.18.2 Forge 40.2.21が存在しません!\nダウンロードしてください。");
             }
         }
 
