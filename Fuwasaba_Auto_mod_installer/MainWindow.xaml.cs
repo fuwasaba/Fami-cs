@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.IO;
 using System.Net.Http;
 using Microsoft.Win32;
@@ -65,7 +65,7 @@ namespace Fuwasaba_Auto_mod_installer
 
                 if (!File.Exists(launcherPath))
                 {
-                    MessageBox.Show("launcher_profiles.jsonが見つかりませんでした。");
+                    MessageBox.Show("launcher_profiles.jsonが見つかりませんでした。\n手動でランチャーに構成を登録してください。");
                     return;
                 }
 
